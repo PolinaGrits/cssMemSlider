@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*wrapper start*/
+.wrapper {
+    width: 100%;
+    min-height: 50rem;
+    height: 100vh;
+    background: #25bc93;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ .wrapper input {
+    width: 0;
+    height: 0;
+}
+
+.wrapper__slider {
+    margin-bottom: 1rem;
+    width: 100%;
+    max-height: 35rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider_display {
+    width: 100%;
+    max-width: 60rem;
+    height: 100%;
+    max-height: 35rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    overflow: hidden;
+    background: rgb(247, 220, 220);
+}
+
+.slider_inner {
+    width: calc(100% * 4);
+    height: 100%;
+    transition: all .3s ease;
+    display: flex;
+}
+.slider_inner img {
+    width: 25%;
+    height: auto;
+}
+/*wrapper end*/
+/*******************************************************************************/
+/* carousel PANEL start*/
+.carousel_wrapper{
+    width: 100%;
+    max-height: 4rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-panel {
+    width: 100%;
+    max-width: 60rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    justify-content: space-between;
+}
+
+.caption{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.caption__display{
+    width: 100%;
+    max-width: 20rem;
+    height: 100%;
+    overflow: hidden;
+}
+.caption__text {
+    width: calc(100% * 4);
+    height: 100%;
+    transition: all .3s ease;
+    display: flex;
+}
+.text{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-left: 0.1rem;
+    color: #fff;
+}
+
+.carousel {
+    max-width: 20rem;
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: 0.5rem;
+}
+.carousel label {
+    width: 2.3rem;
+    height: 2.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.carousel label span {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    border-radius: 100%;
+    border: 0;
+    background: #ebe38e;
+    transition: all .3s ease;
+}
+ label:hover span{
+    background: #940606;
+} 
+/* carousel panel end*/
+/*******************************************************************************/
+/*animation start*/
+#one:checked ~ .wrapper__slider > .slider_display > .slider_inner{
+    transform: translateX(0%);
+}
+#two:checked ~ .wrapper__slider > .slider_display > .slider_inner{
+    transform: translateX(-25%);
+}
+#three:checked ~ .wrapper__slider > .slider_display > .slider_inner{
+    transform: translateX(-50%);
+}
+#four:checked ~ .wrapper__slider > .slider_display > .slider_inner{
+    transform: translateX(-75%);
+}
+
+
+#one:checked ~ .carousel_wrapper .caption > .caption__display > .caption__text{
+    transform: translateX(0%);
+}
+#two:checked ~ .carousel_wrapper .caption > .caption__display > .caption__text{
+    transform: translateX(-25%);
+}
+#three:checked ~ .carousel_wrapper .caption > .caption__display > .caption__text{
+    transform: translateX(-50%);
+}
+#four:checked ~ .carousel_wrapper .caption > .caption__display > .caption__text{
+    transform: translateX(-75%);
+}
+
+
+#one:checked ~ .carousel_wrapper > .carousel-panel > .carousel > .label:nth-child(1) span{
+    border: 0.3rem solid #ae091f;
+}
+#two:checked ~ .carousel_wrapper > .carousel-panel .label:nth-child(2) span{
+    border: 0.3rem solid #ae091f;
+}
+#three:checked ~ .carousel_wrapper > .carousel-panel .label:nth-child(3) span{
+    border: 0.3rem solid #ae091f;
+}
+#four:checked ~ .carousel_wrapper > .carousel-panel .label:nth-child(4) span{
+    border: 0.3rem solid #ae091f;
+}
+/*animation end*/
+/*******************************************************************************/
+@media(max-width: 768px) {
+    .carousel-panel {
+        margin-top: 2rem;
+        flex-direction: column-reverse;
+        justify-content: center;
+        column-gap: 0rem;
+        row-gap: 1rem;
+    }
+}
