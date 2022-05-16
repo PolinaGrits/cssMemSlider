@@ -22,6 +22,7 @@
 }
 
 .wrapper__slider {
+    margin-bottom: 1rem;
     width: 100%;
     max-height: 35rem;
     height: 100%;
@@ -176,3 +177,12 @@
 }
 /*animation end*/
 /*******************************************************************************/
+@media(max-width: 768px) {
+    .carousel-panel {
+        margin-top: 2rem;
+        flex-direction: column-reverse;
+        justify-content: center;
+        column-gap: 0rem;
+        row-gap: 1rem;
+    }
+}
